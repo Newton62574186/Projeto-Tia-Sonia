@@ -1,16 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&display=swap');
 
-
+:root{
+    --cor-principal: #3B929C;
+    --cor-secundario: #FFFFFF;
+    --cor-botao: #E78887;
+}
 * {
     margin: 0;
     padding: 0;
     font-family: "Pacifico", cursive;
 }
 
+#home{
+    scroll-margin-top: 110px;
+}
+#bordados{
+   scroll-margin-top: 110px;
+}
+
 header {
-    background-color: #3B929C;
+    background-color: var(--cor-principal);
     width: 100%;
     height: 110px;
+    position: fixed ;
+    top: 0;
 }
 
 nav {
@@ -32,7 +45,7 @@ ul {
 
 a {
     text-decoration: none;
-    color: white;
+    color: var(--cor-secundario);
     font-size: 20px;
     font-weight: 400;
     font-style: normal;
@@ -42,13 +55,21 @@ a {
 }
 
 a:hover {
-    background-color: blue;
-    color: chartreuse;
+    background-color: var(--cor-botao);
+    color: var(--cor-secundario);
 }
 
+a:focus {
+    background-color: var(--cor-botao);
+    color: var(--cor-secundario);
+}
 
 .icones {
     padding: 10px 50px;
+}
+
+main{
+     margin-top:  110px;
 }
 
 #banner {
@@ -64,8 +85,8 @@ a:hover {
 #reservas {
     width: 1400px;
     height: 200px;
-    border: 2px dashed #3B929C;
-    color: #3B929C;
+    border: 2px dashed var(--cor-principal);
+    color: var(--cor-principal);
     text-align: center;
     font-size: 24px;
     margin-top: 10px;
@@ -76,11 +97,16 @@ a:hover {
     padding: 20px 60px;
     color: white;
     font-size: 20px;
-    background-color: #3B929C;
+    background-color: var(--cor-principal);
     border: none;
     border-radius: 15px;
     margin-top: 15px;
 
+}
+
+#reservas__botao:hover {
+    background-color: var(--cor-botao);
+    color: var(--cor-secundario);
 }
 
 .area-banner {
@@ -102,7 +128,7 @@ a:hover {
 }
 
 .sobre {
-    color: #3B929C;
+    color: var(--cor-principal);
     width: 500px;
 }
 
@@ -116,8 +142,8 @@ a:hover {
 }
 
 #roda__pe {
-    background-color: #3B929C;
-    color: white;
+    background-color: var(--cor-principal);
+    color: var(--cor-secundario);
     width: 100%;
     height: 50px;
     margin-bottom: 25px;
@@ -129,54 +155,62 @@ a:hover {
     font-size: 20px;
 }
 
-.area-busca{
+.area-busca {
     margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.catalogo-titulo{
+
+.catalogo-titulo {
     font-size: 50px;
-    color: #3B929C;
+    color: var(--cor-principal);
     margin-bottom: 50px;
 }
+
 .busca {
     display: flex;
     width: 764px;
     height: 40px;
-    border: 3px solid #3B929C;
+    border: 3px solid var(--cor-principal);
     border-radius: 20px;
-    padding: 5px;    
+    padding: 5px;
 }
+
 .busca__campo {
     flex: 1;
     border: none;
     outline: none;
     font-size: 20px;
 }
+
 .busca__botao {
     font-size: 25px;
     border: none;
     background: none;
-    color: #3B929C;
+    color: var(--cor-principal);
     margin-top: -3px;
 }
-.catalogo-titulo{
+
+.catalogo-titulo {
     font-size: 50px;
-    color: #3B929C;
+    color: var(--cor-principal);
     margin-bottom: 50px;
 }
-.catalogo{
+
+.catalogo {
     margin: 100px auto;
     width: 1400px;
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
 }
-.bordados > a > img{
+
+.bordados>a>img {
     width: 400px;
     border-radius: 20px;
 }
-.bordados{
+
+.bordados {
     text-align: center;
 }
