@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&display=swap');
 
 :root{
-    --cor-principal: #3B929C;
-    --cor-secundario: #FFFFFF;
-    --cor-botao: #E78887;
+    --cor-principal: #3d6119; /*#3B929C*/
+    --cor-secundario: #dcaf56; /*#FFFFFF*/ 
+    --cor-botao: #873036; /*E78887*/
+    --largura-principal: 1600px;
 }
 * {
     margin: 0;
@@ -43,26 +44,27 @@ ul {
     margin-right: 50px;
 }
 
-a {
+.icones {
     text-decoration: none;
     color: var(--cor-secundario);
     font-size: 20px;
     font-weight: 400;
     font-style: normal;
-    border: 2px white solid;
+    border: 2px var(--cor-secundario) solid;
     padding: 10px;
     border-radius: 0px 20px;
 }
 
-a:hover {
+.icones:hover {
     background-color: var(--cor-botao);
     color: var(--cor-secundario);
 }
 
-a:focus {
+.icones:focus {
     background-color: var(--cor-botao);
     color: var(--cor-secundario);
 }
+
 
 .icones {
     padding: 10px 50px;
@@ -73,17 +75,17 @@ main{
 }
 
 #banner {
-    width: 1400px;
+    width: var(--largura-principal);
 
 }
 
 #banner__image {
-    width: 1400px;
+    width: var(--largura-principal);
     margin-top: 10px;
 }
 
 #reservas {
-    width: 1400px;
+    width: var(--largura-principal);
     height: 200px;
     border: 2px dashed var(--cor-principal);
     color: var(--cor-principal);
@@ -121,7 +123,7 @@ main{
 
 .area-sobre {
     display: flex;
-    width: 1400px;
+    width: var(--largura-principal);
     margin: 20px auto;
     gap: 70px;
     justify-content: space-around;
@@ -200,17 +202,26 @@ main{
 
 .catalogo {
     margin: 100px auto;
-    width: 1400px;
+    width: var(--largura-principal);
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 50px;
 }
 
-.bordados>a>img {
+.bordados > a> img {
     width: 400px;
     border-radius: 20px;
 }
 
 .bordados {
     text-align: center;
+}
+.linha{
+    width: var(--largura-principal);
+    margin: auto;
+
+}
+h3{
+    color: var(--cor-principal);
 }
