@@ -1,33 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&display=swap');
 
-:root{
-    --cor-principal: #3d6119; /*#3B929C*/
-    --cor-secundario: #dcaf56; /*#FFFFFF*/ 
-    --cor-botao: #873036; /*E78887*/
+:root {
+    --cor-principal: #3d6119;
+    /*#3B929C*/
+    --cor-secundario: #dcaf56;
+    /*#FFFFFF*/
+    --cor-botao: #873036;
+    /*E78887*/
     --largura-principal: 1600px;
+    --largura-celula: 430px;
 }
+
 * {
     margin: 0;
     padding: 0;
     font-family: "Pacifico", cursive;
 }
 
-#home{
+#home {
     scroll-margin-top: 110px;
 }
-#bordados{
-   scroll-margin-top: 110px;
+
+#bordados {
+    scroll-margin-top: 110px;
 }
 
 header {
     background-color: var(--cor-principal);
     width: 100%;
     height: 110px;
-    position: fixed ;
+    position: fixed;
     top: 0;
 }
 
-nav {
+
+.area-de-navegacao {
 
     display: flex;
     justify-content: space-between;
@@ -53,6 +60,7 @@ ul {
     border: 2px var(--cor-secundario) solid;
     padding: 10px;
     border-radius: 0px 20px;
+    padding: 10px 50px;
 }
 
 .icones:hover {
@@ -66,12 +74,8 @@ ul {
 }
 
 
-.icones {
-    padding: 10px 50px;
-}
-
-main{
-     margin-top:  110px;
+main {
+    margin-top: 110px;
 }
 
 #banner {
@@ -209,7 +213,7 @@ main{
     gap: 50px;
 }
 
-.bordados > a> img {
+.bordados>a>img {
     width: 400px;
     border-radius: 20px;
 }
@@ -217,11 +221,103 @@ main{
 .bordados {
     text-align: center;
 }
-.linha{
+
+.linha {
     width: var(--largura-principal);
     margin: auto;
 
 }
-h3{
+
+h3 {
     color: var(--cor-principal);
+}
+
+@media(max-width:430px) {
+    .area-de-navegacao {
+        width: var(--largura-celula);
+        height: 80px;
+        justify-content: center;
+        
+    }
+
+    header {
+        width: var(--largura-celula);
+        height: 80px;
+        display: block;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    ul {
+        gap: 10px;
+        justify-content: space-around;
+    }
+
+    .icones {
+        font-size: 25px;
+        border: none;
+        padding: 20px;
+        
+    }
+    .icones:hover, .icones:focus{
+        display: none;
+        color: none;
+    }
+#banner{
+    width: var(--largura-celula);
+}
+#banner__image{
+    width: var(--largura-celula);
+}
+#reservas{
+    width: 390px;
+    border-width: 2px;
+}
+#reservas__titulo{
+    font-size: 30px;
+}
+#reservas__botao{
+    padding: 15px 20px;
+    font-size: 20px;
+    border-radius: 8px;
+}
+.area-sobre{
+    flex-direction: column;
+    gap: 0;
+}
+.sobre{
+    width: var(--largura-celula);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sobre__titulo{
+    font-size: 22px;
+}
+.sobre__texto{
+    font-size: 20px; 
+}
+.sobre__foto{
+    width: 400px;
+    border-radius: 100px; 
+}
+.catalogo {
+    width: var(--largura-celula);
+
+}
+.linha{
+    width: 400px;
+}
+.area-busca{
+    width: var(--largura-celula);
+}
+.busca{
+    width: 350px;
+}
+
+.catalogo-titulo{
+    font-size: 35px;
+}
 }
