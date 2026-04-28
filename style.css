@@ -231,6 +231,21 @@ main {
 h3 {
     color: var(--cor-principal);
 }
+.rodape{
+    width: 100vw;
+    height: 10vh;
+    background-color: var(--cor-principal);
+    color: var(--cor-secundario);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+}
+.nav-rodape p {
+    margin: 0.5vw;
+    
+
+}
 
 @media(max-width:430px) {
     header {
