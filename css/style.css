@@ -17,6 +17,10 @@
     font-family: "Pacifico", cursive;
 }
 
+.acesso-negado{
+    background-color: red;
+}
+
 #home {
     scroll-margin-top: 110px;
 }
