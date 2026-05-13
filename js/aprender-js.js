@@ -21,7 +21,8 @@ if (nomeDigitado === nomeUsuario1 && senhaDigitada === senhaUsuario1)
     alert("Login falhou! Email ou senha incorretos.")
     document.body.classList.add("acesso-negado")
 }
-*/
+
+
 
 //Variáveis de Login
 let cumprimento = prompt("Oi! Como você está?!")
@@ -40,3 +41,4 @@ if (idade >= 18)
     document.body.classList.add("acesso-negado")
     document.getElementById("banner__image").src = "Img/acesso-negado-img.png"
 }
+*/
