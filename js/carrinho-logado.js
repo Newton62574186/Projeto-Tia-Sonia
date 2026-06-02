@@ -1,5 +1,6 @@
 //Vamos verificar se o usuario está logado
 const usuarioLogado = localStorage.getItem('usuarioCadastro')
+
 //Se não estiver logado é direcionado para a página de login
 if (!usuarioLogado) {
     document.innerHTML =
@@ -14,6 +15,7 @@ if (!usuarioLogado) {
     }, 2500)
 
 } else {
+
     //Reunindo as informações do usuário logado
     const carrinho = JSON.parse(localStorage.getItem('itemCarrinho')) || []
     const listaProdutosHTML = document.getElementById('lista-produtos')
@@ -45,6 +47,45 @@ if (!usuarioLogado) {
         })
         textoTotal.innerText = 'Total: R$ ' + valorTotal
         textoPedidoPorEmail += '\nValor Total: R$ ' + valorTotal
-    }
+   
 
+    //finalizar o pedido por e-mail
+    const btnFinalizar = document.getElementById('btn-finalizar')
+    
+    btnFinalizarFinalizar.addEventListener('click', function(){
+        event.preventDefault()
+
+        if(carrinho.length === 0){
+            const textOriginal = btnFinalizar.innerText
+            btnFinalizar.innertext = 'O Carrinho está vazinho!'
+            btnFinalizar.classList.replace('btn-success', 'btn-danger')
+
+            setTimeout(() => {
+                btnFinalizar.innerText = textOriginal
+                btnFinalizar.classList.replace('btn-danger', 'btn-success')
+            }, 2500)
+            
+            return
+        }
+
+        btnFinalizar.innerText = 'Preparando pedido...'
+        btnFinalizar.classList.replace('btn-success', 'btn-secondary')
+
+        const cliente = JSON.parse(usuarioLogado)
+        textoPedidoPorEmail += '\n\nDados do Cliente:\nNome: ' + cliente.nome + '\nE-mail: ' + cliente.telefone
+
+        const emailTiaSonia = 'newton62574186@edu.df.senac.br'
+        const assunto = 'Novo Pedido de ' + cliente.nome
+
+        const linkEmail = 'https://mail.google.com/mail/?view=cm&fs=1&to=${emailTiaSonia}&su=${encodeURIComponent(assunto)}&body=${encodeURIComponent(textoPedidoPorEmail)}'
+
+        window.open(linkGmail, '_blank')
+
+        localStorage.removeItem('itemcarrinho')
+
+        setTimeout(() => {
+            window.location.href = 'index.html'
+        }, 1500)
+    })
+   } 
 }
